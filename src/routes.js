@@ -1,13 +1,15 @@
-import React, { lazy } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes,
 } from "react-router-dom";
-import Frame from "./pages/components/Frame";
+import Frame from "./components/Frame";
+import home from './catalog';
+import movie from './movie';
 
-const HomePage = lazy(() => import("./pages/Catalog"));
-const MoviePage = lazy(() => import("./pages/Movie"));
+const HomePage = home();
+const MoviePage = movie();
 
 const index = () => {
   return (
