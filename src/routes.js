@@ -1,7 +1,7 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Layout from "./commons/TopLevelLayout";
-import Router from "./commons/RootRouter";
+import Layout from "./commons/components/TopLevelLayout";
+import Router from "./commons/components/RootRouter";
 import home from "./catalog";
 import movie from "./movie";
 
