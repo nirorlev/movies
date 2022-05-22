@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
+import Routes from "./routes";
 
-const App = () => <></>;
+const index = () => <Routes />;
 
-export default App;
+export default index;
