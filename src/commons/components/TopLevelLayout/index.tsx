@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 
-const index = () => {
+const TopLevelLayout = () => {
   return (
     <Suspense fallback={<div>...fame</div>}>
       <div>frame</div>
@@ -10,4 +10,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default TopLevelLayout;

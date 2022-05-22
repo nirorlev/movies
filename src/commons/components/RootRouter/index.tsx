@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-const index = ({ children, element }) => {
+type Props = {children: React.ReactElement[], element: React.ReactElement};
+
+const RootRouter = ({ children, element }: Props) => {
   return (
     <Router>
       <Routes>
@@ -13,4 +15,4 @@ const index = ({ children, element }) => {
   );
 };
 
-export default index;
+export default RootRouter;

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useDevice from "../../../commons/effects/useDevice";
 import Icon from "../Icon";
-import pages from "../mock";
-import { DeviceData } from "../type";
+import pages from "./mock";
+import { DeviceData } from "./type";
 
 const Navbar = () => {
   const { isPortable } = useDevice();
