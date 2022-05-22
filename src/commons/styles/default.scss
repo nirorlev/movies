@@ -1,5 +1,6 @@
 
 $font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-$screen-size-xs: (max-width: 480px);
-$screen-size-md: (min-width: 481px) and (max-width: 1280px);
-$screen-size-xl: (min-width: 1281px);
+$xs-resolution: 480px;
+$sm-resolution: 768px;
+$md-resolution: 1080px;
+$lg-resolution: 1920px;
