@@ -1,5 +1,6 @@
+@use 'default' as d;
+@use 'theme';
 
-$font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$screen-size-xs: (max-width: 480px); 
-$screen-size-md: (min-width: 481px) and (max-width: 1280px);
-$screen-size-xl: (min-width: 1281px);
+* {
+    font-family: d.$font-family;
+}

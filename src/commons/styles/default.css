@@ -1,5 +1,5 @@
-@use 'global';
-@use 'theme';
-@use 'mobile';
-@use 'laptop';
-@use 'desktop';
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/*# sourceMappingURL=default.css.map */
