@@ -27,5 +27,6 @@ yarn-error.log*
 .env*
 
 #build
-**/styles/*.css
 **.css.map
+**/styles.css
+**/styles/*.css
