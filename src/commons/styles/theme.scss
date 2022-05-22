@@ -1,0 +1,18 @@
+
+$black: hsl(0, 0%, 0%);
+$dark-gray: hsl(0, 0%, 18%);
+$light-gray: hsl(0, 0%, 82%);
+$white: hsl(0, 0%, 100%);
+$red-100: hsl(357, 92%, 97%);
+$red-300: hsl(357, 92%, 72%);
+$red-500: hsl(357, 92%, 47%);
+$red-700: hsl(357, 92%, 32%);
+$red-900: hsl(357, 92%, 17%);
+
+$darkest: $black;
+$dark: $dark-gray;
+$light: $light-gray;
+$lightest: $white;
+$light-brand-color: $red-100;
+$brand-color: $red-500;
+$dark-brand-color: $red-900;

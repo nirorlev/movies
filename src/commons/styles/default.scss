@@ -1,0 +1,9 @@
+@use 'global';
+@use 'theme';
+@use 'mobile';
+@use 'laptop';
+@use 'desktop';
+
+* {
+    font-family: $font-family;
+}
