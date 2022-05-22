@@ -8,7 +8,7 @@ import movie from "./movie";
 const HomePage = home();
 const MoviePage = movie();
 
-const index = () => {
+const Routes = () => {
   return (
     <Router element={<Layout />}>
       <Route index element={<HomePage />} />
@@ -17,4 +17,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Routes;

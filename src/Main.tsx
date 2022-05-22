@@ -1,6 +1,6 @@
 import React from "react";
 import Routes from "./routes";
 
-const index = () => <Routes />;
+const Main = () => <Routes />;
 
-export default index;
+export default Main;
