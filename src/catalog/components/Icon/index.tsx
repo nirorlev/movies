@@ -1,6 +1,7 @@
 import React from "react";
 import './styles.scss';
 
+
 type Props = { logo: string };
 
 const Icon = ({ logo }: Props) => {

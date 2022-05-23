@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import pages from "./mock";
 import { DeviceData } from "./type";
+import { U } from "../../../commons";
 import './styles.scss'
 
 type Props = { isExtraSmall?: boolean, isSmall?: boolean };
@@ -28,7 +29,7 @@ const Navbar = ({ isSmall, isExtraSmall }: Props) => {
         ))}
       </div>
       <div className="navbar__options">
-        {(isExtraSmall ? icon : icons).map(el => <Icon logo={el} />)}
+        {(isExtraSmall ? icon : icons).map(el => <button onClick={U.fallbackHandler}><Icon logo={el} /></button>)}
       </div>
     </div>
   );
