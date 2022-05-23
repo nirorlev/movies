@@ -1,8 +1,10 @@
 import React from "react";
 import './styles.scss';
 
-const Icon = () => {
-  return <span className="logo"/>;
+type Props = { logo: string };
+
+const Icon = ({ logo }: Props) => {
+  return <span className={`logo logo-${logo}`} />;
 }
 
 export default Icon;

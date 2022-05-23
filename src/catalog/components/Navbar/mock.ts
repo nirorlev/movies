@@ -2,7 +2,7 @@ import { DeviceData } from "./type";
 
 const data: { desktop: DeviceData; mobile: DeviceData } = {
   desktop: {
-    home: "Home",
+    '/': "Home",
     "tv-shows": "Tv Shows",
     movies: "Movies",
     top: "Top",

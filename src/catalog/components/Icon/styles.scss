@@ -2,13 +2,40 @@
 
 .logo {
   display: inline-block;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.logo-netflix {
+  background-image: url("../../../assets/n-logo.svg");
+}
+
+.logo-bell {
+  background-image: url("../../../assets/bell.svg");
+  filter: invert(1);
+}
+
+.logo-search {
+  background-image: url("../../../assets/search.svg");
+  filter: invert(1);
+}
+
+.logo-user {
+  background-image: url("../../../assets/user.svg");
+  filter: invert(1);
 }
 
 @media screen and (max-width: #{g.$xs-resolution}) {
   .logo {
     width: g.$icon-sm;
     height: g.$icon-sm;
+    margin: g.$icon-sm auto;
     background-size: g.$icon-sm g.$icon-sm;
+  }
+
+  .logo-netflix {
     background-image: url("../../../assets/n-logo.svg");
   }
 }
@@ -17,15 +44,25 @@
   .logo {
     width: g.$icon-md;
     height: g.$icon-md;
+    margin: g.$icon-md auto;
     background-size: g.$icon-md g.$icon-md;
+  }
+
+  .logo-netflix {
     background-image: url("../../../assets/n-logo.svg");
   }
 }
 
 @media screen and (min-width: #{g.$md-resolution + 1}) {
   .logo {
-    width: g.$icon-md * 5;
+    width: g.$icon-md;
     height: g.$icon-md;
+    margin: g.$icon-md auto;
+    background-size: g.$icon-md g.$icon-md;
+  }
+  
+  .logo-netflix {
+    width: g.$icon-md * 5;
     background-size: g.$icon-md * 5 g.$icon-md;
     background-image: url("../../../assets/netflix-logo.svg");
   }

@@ -11,6 +11,7 @@ const Routes = () => {
   return (
     <C.RootRouter element={<C.TopLevelLayout />}>
       <Route index element={<HomePage />} />
+      <Route path="/home" element={<HomePage />} />
       <Route path="/:mname" element={<MoviePage />} />
     </C.RootRouter>
   );

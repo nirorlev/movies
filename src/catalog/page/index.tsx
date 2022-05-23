@@ -3,11 +3,11 @@ import { E } from "../../commons";
 import Navbar from "../components/Navbar";
 
 const Catalog = () => {
-  const { isPortable } = E.useDevice();
+  const { issm, isxs } = E.useDevice();
 
   return (
     <Suspense fallback={<div>...catalog</div>}>
-      <Navbar isPortable={isPortable}/>
+      <Navbar isSmall={issm} isExtraSmall={isxs} />
       <div>catalog</div>
     </Suspense>
   );
