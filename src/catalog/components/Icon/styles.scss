@@ -1,9 +1,14 @@
-@use '../../../commons/styles/default.scss' as d;
+// @media screen and (max-width: #{d.$xs-resolution}) {
+  .logo {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+  }
 
-@media screen and (max-width: #{d.$xs-resolution}) {
-    
-}
+  .logo::after {
+  }
+// }
 
-@media screen and (min-width: #{d.$md-resolution}) {
+// @media screen and (min-width: #{d.$md-resolution}) {
 
-}
+// }

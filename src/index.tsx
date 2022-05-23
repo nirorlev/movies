@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Main from './Main';
 import registerServiceWorker from './registerServiceWorker';
 
-import './reset.css';
+import './commons/global.scss';
 
 ReactDOM.render(<Main />, document.getElementById('root'));
 registerServiceWorker();

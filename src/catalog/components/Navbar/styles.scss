@@ -1,9 +1,8 @@
-@use '../../../commons/styles/default.scss' as d;
+// @media screen and (max-width: #{d.$xs-resolution}) {
+  .link {
+  }
+// }
 
-@media screen and (max-width: #{d.$xs-resolution}) {
-    
-}
+// @media screen and (min-width: #{d.$md-resolution}) {
 
-@media screen and (min-width: #{d.$md-resolution}) {
-
-}
+// }

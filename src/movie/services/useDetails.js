@@ -1,4 +1,4 @@
-import mock from "../../mocks/topTatedMovies.json";
+import mock from "../../mocks.json";
 
 const useDetails = () => {
   return { get: async () => mock };

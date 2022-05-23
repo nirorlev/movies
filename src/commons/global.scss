@@ -1,0 +1,20 @@
+@import './styles/reset.scss';
+@import './styles/default.scss';
+@import './styles/theme.scss';
+
+* {
+  font-family: $font-family;
+}
+
+a, span {
+  font-family: $font-family;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.layout {
+  width: 100vw;
+  height: 100vh;
+  background-color: $dark;
+  overflow: hidden;
+}

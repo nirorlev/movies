@@ -1,7 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import Layout from "./commons/components/TopLevelLayout";
-import Router from "./commons/components/RootRouter";
+import {C} from './commons';
 import home from "./catalog";
 import movie from "./movie";
 
@@ -10,10 +9,10 @@ const MoviePage = movie();
 
 const Routes = () => {
   return (
-    <Router element={<Layout />}>
+    <C.RootRouter element={<C.TopLevelLayout />}>
       <Route index element={<HomePage />} />
       <Route path="/:mname" element={<MoviePage />} />
-    </Router>
+    </C.RootRouter>
   );
 };
 

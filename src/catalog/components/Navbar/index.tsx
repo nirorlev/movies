@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import useDevice from "../../../commons/effects/useDevice";
 import Icon from "../Icon";
 import pages from "./mock";
 import { DeviceData } from "./type";
+import './styles.scss'
 
-const Navbar = () => {
-  const { isPortable } = useDevice();
+type Props = { isPortable: boolean };
+
+const Navbar = ({ isPortable }: Props) => {
   const [links, setLinks] = useState<DeviceData>({});
 
   useEffect(() => {
@@ -17,7 +18,7 @@ const Navbar = () => {
     <div className="navbar">
       <Icon />
       {Object.keys(links).map((k: string) => (
-        <Link key={k} to={k}>{links[k]}</Link>
+        <Link key={k} to={k} className="link">{links[k]}</Link>
       ))}
     </div>
   );
