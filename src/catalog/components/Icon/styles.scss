@@ -1,14 +1,32 @@
-// @media screen and (max-width: #{d.$xs-resolution}) {
+@use '../../../commons/global.scss' as g;
+
+.logo {
+  display: inline-block;
+}
+
+@media screen and (max-width: #{g.$xs-resolution}) {
   .logo {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
+    width: g.$icon-sm;
+    height: g.$icon-sm;
+    background-size: g.$icon-sm g.$icon-sm;
+    background-image: url("../../../assets/n-logo.svg");
   }
+}
 
-  .logo::after {
+@media screen and (min-width: #{g.$xs-resolution + 1}) and (max-width: #{g.$md-resolution}){
+  .logo {
+    width: g.$icon-md;
+    height: g.$icon-md;
+    background-size: g.$icon-md g.$icon-md;
+    background-image: url("../../../assets/n-logo.svg");
   }
-// }
+}
 
-// @media screen and (min-width: #{d.$md-resolution}) {
-
-// }
+@media screen and (min-width: #{g.$md-resolution + 1}) {
+  .logo {
+    width: g.$icon-md * 5;
+    height: g.$icon-md;
+    background-size: g.$icon-md * 5 g.$icon-md;
+    background-image: url("../../../assets/netflix-logo.svg");
+  }
+}
