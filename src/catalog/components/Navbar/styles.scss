@@ -18,8 +18,12 @@ $proportion: 70%;
   width: 100% - $proportion;
   justify-content: flex-end;
   
-  > * {
-    margin: g.$spacing-md;
+  > button {
+    margin: g.$spacing-xs / 2;
+  }
+
+  > button > span {
+    margin: g.$spacing-md auto;
   }
 }
 
@@ -27,14 +31,18 @@ $proportion: 70%;
   color: g.$white;
 }
 
-@media screen and (max-width: #{g.$md-resolution - 1}) {
+@media screen and (min-width: #{g.$sm-resolution - 1}) {
   .link {
     font-size: g.$spacing-xs;
     margin-left: g.$spacing-sm;
   }
+
+  .navbar__options > button {
+    margin: g.$spacing-xs;
+  }
 }
 
-@media screen and (min-width: #{g.$md-resolution}) {
+@media screen and (min-width: #{g.$sm-resolution}) {
   .link {
     font-size: g.$spacing-sm;
     margin-left: g.$spacing-md;
