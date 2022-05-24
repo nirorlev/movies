@@ -1,0 +1,9 @@
+@use '../../global.scss' as g;
+
+.layout {
+  width: 100vw;
+  height: 100vh;
+  background-color: g.$dark;
+  overflow-y: hidden;
+}
+  

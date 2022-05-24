@@ -142,18 +142,12 @@ a, span {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   text-decoration: none;
+  letter-spacing: 0.05rem;
 }
 
 button {
   border: none;
   background-color: transparent;
-}
-
-.layout {
-  width: 100vw;
-  height: 100vh;
-  background-color: hsl(0deg, 0%, 18%);
-  overflow-y: hidden;
 }
 
 /*# sourceMappingURL=global.css.map */

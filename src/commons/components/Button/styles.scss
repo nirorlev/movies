@@ -1,0 +1,27 @@
+@use '../../global.scss' as g;
+
+.btn {
+  padding: g.$nn g.$lg;
+  border-radius: g.$nn;
+}
+
+.btn-primary {
+  background-color: g.$lightest;
+}
+
+.btn-secondary {
+  background-color: transparentize(g.$lightest, 0.6);
+}
+
+.text {
+  font-weight: bold;
+}
+
+.text-primary {
+  color: g.$darkest;
+}
+
+.text-secondary {
+  color: g.$lightest;
+}
+
