@@ -3,7 +3,7 @@ import './styles.scss';
 
 type Props = { logo: string };
 
-const Icon = ({ logo }: Props) => {
+const Icon: React.FC<Props> = ({ logo }) => {
   return <span className={`logo logo-${logo}`} />;
 }
 

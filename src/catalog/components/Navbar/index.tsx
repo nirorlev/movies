@@ -11,7 +11,7 @@ type Props = { isExtraSmall?: boolean, isSmall?: boolean };
 const icon = ["search"];
 const icons = ["bell", "search", "user"];
 
-const Navbar = ({ isSmall, isExtraSmall }: Props) => {
+const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
   const [links, setLinks] = useState<DeviceData>({});
 
   useEffect(() => {

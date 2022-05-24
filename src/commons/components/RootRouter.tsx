@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-type Props = {children: React.ReactElement[], element: React.ReactElement};
+type Props = { children: React.ReactElement[], element: React.ReactElement };
 
-const RootRouter = ({ children, element }: Props) => {
+const RootRouter: React.FC<Props> = ({ children, element }) => {
   return (
     <Router>
       <Routes>
