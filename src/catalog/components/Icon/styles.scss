@@ -9,21 +9,21 @@
 }
 
 .logo-netflix {
-  background-image: url("../../../assets/n-logo.svg");
+  background-image: url("/assets/n-logo.svg");
 }
 
 .logo-bell {
-  background-image: url("../../../assets/bell.svg");
+  background-image: url("/assets/bell.svg");
   filter: invert(1);
 }
 
 .logo-search {
-  background-image: url("../../../assets/search.svg");
+  background-image: url("/assets/search.svg");
   filter: invert(1);
 }
 
 .logo-user {
-  background-image: url("../../../assets/user.svg");
+  background-image: url("/assets/user.svg");
   filter: invert(1);
 }
 
@@ -36,7 +36,7 @@
   }
 
   .logo-netflix {
-    background-image: url("../../../assets/n-logo.svg");
+    background-image: url("/assets/n-logo.svg");
   }
 }
 
@@ -49,7 +49,7 @@
   }
 
   .logo-netflix {
-    background-image: url("../../../assets/n-logo.svg");
+    background-image: url("/assets/n-logo.svg");
   }
 }
 
@@ -64,6 +64,6 @@
   .logo-netflix {
     width: g.$icon-md * 5;
     background-size: g.$icon-md * 5 g.$icon-md;
-    background-image: url("../../../assets/netflix-logo.svg");
+    background-image: url("/assets/netflix-logo.svg");
   }
 }
