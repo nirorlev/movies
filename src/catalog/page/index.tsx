@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { useDevice } from "../../commons";
+import { Icon, useDevice } from "../../commons";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Highlight from "../components/Highlight";
@@ -10,10 +10,11 @@ const Catalog = () => {
   return (
     <Suspense fallback={<div>...catalog</div>}>
       <Background>
-        <>
           <Navbar isSmall={issm} isExtraSmall={isxs} />
-          <Highlight />
-        </>
+          <Highlight
+            play={<Icon icon="./assets/play.svg" />}
+            info={<Icon icon="./assets/info.svg" />}
+          />
       </Background>
       <div>catalog</div>
     </Suspense>

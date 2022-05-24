@@ -7,7 +7,12 @@
   align-items: flex-end;
 }
 
-.highlight__buttons > * {
-  margin-left: g.$nn
-}
+.highlight__buttons {
+  display: flex;
+  flex-flow: row;
 
+  > * {
+    width: g.$lg * 5;
+    margin-left: g.$nn;
+  }
+}
