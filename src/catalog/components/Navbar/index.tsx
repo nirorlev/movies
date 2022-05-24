@@ -29,7 +29,9 @@ const Navbar = ({ isSmall, isExtraSmall }: Props) => {
         ))}
       </div>
       <div className="navbar__options">
-        {(isExtraSmall ? icon : icons).map(el => <button onClick={U.fallbackHandler}><Icon logo={el} /></button>)}
+        {(isExtraSmall ? icon : icons).map(
+          (el, idx) => <button key={idx} onClick={U.fallbackHandler}><Icon logo={el} /></button>
+        )}
       </div>
     </div>
   );

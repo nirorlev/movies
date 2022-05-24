@@ -1,4 +1,4 @@
-import { EventHandler, SyntheticEvent } from "react";
+import { EventHandler } from "react";
 
 const fallbackHandler: EventHandler<any> = (event: Event) => {
   event.preventDefault();

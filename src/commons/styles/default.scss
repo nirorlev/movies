@@ -6,11 +6,23 @@ $sm-resolution: 768px;
 $md-resolution: 1080px;
 $lg-resolution: 1920px;
 
-$spacing-xs: 0.75rem;
-$spacing-sm: 1rem;
-$spacing-md: 1.25rem;
-$spacing-lg: 1.75rem;
-$spacing-xl: 2rem;
+$xs: 0.75rem;
+$sm: 1rem;
+$md: 1.25rem;
+$lg: 1.75rem;
+$xl: 2rem;
+
+$spacing-xs: $xs;
+$spacing-sm: $sm;
+$spacing-md: $md;
+$spacing-lg: $lg;
+$spacing-xl: $xl;
+
+$font-xs: $xs;
+$font-sm: $sm;
+$font-md: $md;
+$font-lg: $lg;
+$font-xl: $xl;
 
 $icon-sm: 24px;
 $icon-md: 32px;

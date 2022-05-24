@@ -1,0 +1,17 @@
+@use '../../commons/global.scss' as g;
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    margin: - g.$spacing-xl;
+}
+
+.message {
+  font-size: g.$font-md;
+  line-height: g.$spacing-lg;
+  font-weight: bolder;
+  color: g.$lightest;
+}
