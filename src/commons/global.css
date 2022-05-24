@@ -152,9 +152,8 @@ button {
 .layout {
   width: 100vw;
   height: 100vh;
-  padding: 1rem 1.75rem 1rem 1.75rem;
   background-color: hsl(0deg, 0%, 18%);
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 /*# sourceMappingURL=global.css.map */

@@ -20,7 +20,6 @@ button {
 .layout {
   width: 100vw;
   height: 100vh;
-  padding: $spacing-sm $spacing-lg $spacing-sm $spacing-lg;
   background-color: $dark;
-  overflow: hidden;
+  overflow-y: hidden;
 }

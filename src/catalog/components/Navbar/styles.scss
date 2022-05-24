@@ -21,14 +21,11 @@ $proportion: 70%;
   > button {
     margin: g.$spacing-xs / 2;
   }
-
-  > button > span {
-    margin: g.$spacing-md auto;
-  }
 }
 
 .link {
   color: g.$white;
+  text-shadow: 0 0 g.$sm hsl(0deg 0% 35%)
 }
 
 @media screen and (min-width: #{g.$sm-resolution - 1}) {
