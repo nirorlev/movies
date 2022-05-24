@@ -1,4 +1,1 @@
-import useDevice from "./useDevice";
-
-export { useDevice };
-export default { useDevice };
+export { useDevice } from "./useDevice";

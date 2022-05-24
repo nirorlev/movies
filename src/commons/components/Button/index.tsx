@@ -3,7 +3,7 @@ import './styles.scss';
 
 type Props = { text: string, type: "primary" | "secondary" };
 
-const Button: React.FC<Props> = ({ type, text }) => {
+export const Button: React.FC<Props> = ({ type, text }) => {
   return (
     <button className={`btn btn-${type}`}>
       <span className={`text text-${type}`}>{text}</span>
@@ -11,4 +11,4 @@ const Button: React.FC<Props> = ({ type, text }) => {
   );
 }
 
-export default Button;
+export { Button as default };

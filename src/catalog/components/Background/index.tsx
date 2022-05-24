@@ -3,7 +3,7 @@ import './styles.scss';
 
 type Props = { children?: React.ReactElement }
 
-const Background: React.FC<Props> = ({ children }) => {
+export const Background: React.FC<Props> = ({ children }) => {
   return (
     <div className="bg">
       <img alt="Play now" className="bg__image" src="https://random.imagecdn.app/720/480" />
@@ -14,4 +14,4 @@ const Background: React.FC<Props> = ({ children }) => {
   );
 }
 
-export default Background;
+export { Background as default };

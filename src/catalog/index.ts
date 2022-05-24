@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-const component: LazyComponent = () =>
+export const component: LazyComponent = () =>
   lazy(() => import("./page"));
 
-export default component;
+export { component as default };

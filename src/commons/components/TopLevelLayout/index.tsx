@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import './styles.scss'
 
-const TopLevelLayout = () => {
+export const TopLevelLayout = () => {
   return (
     <Suspense fallback={<div>...fame</div>}>
       <div className="layout">
@@ -12,4 +12,4 @@ const TopLevelLayout = () => {
   );
 };
 
-export default TopLevelLayout;
+export { TopLevelLayout as default };

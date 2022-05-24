@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useDevice = () => {
+export const useDevice = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const handler = () => setWidth(window.innerWidth);
 
@@ -20,4 +20,4 @@ const useDevice = () => {
   };
 };
 
-export default useDevice;
+export { useDevice as default };

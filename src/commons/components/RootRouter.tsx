@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 type Props = { children: React.ReactElement[], element: React.ReactElement };
 
-const RootRouter: React.FC<Props> = ({ children, element }) => {
+export const RootRouter: React.FC<Props> = ({ children, element }) => {
   return (
     <Router>
       <Routes>
@@ -15,4 +15,4 @@ const RootRouter: React.FC<Props> = ({ children, element }) => {
   );
 };
 
-export default RootRouter;
+export { RootRouter as default };

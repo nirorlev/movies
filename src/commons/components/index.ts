@@ -1,6 +1,4 @@
-import RootRouter from "./RootRouter";
-import TopLevelLayout from "./TopLevelLayout";
-import Button from "./Button";
-
-export { Button, RootRouter, TopLevelLayout };
-export default { Button, RootRouter, TopLevelLayout };
+export { RootRouter } from "./RootRouter";
+export { TopLevelLayout } from "./TopLevelLayout";
+export { Button } from "./Button";
+export { Icon } from "./Icon";

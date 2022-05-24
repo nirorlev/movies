@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
-import { E } from "../../commons";
+import { useDevice } from "../../commons";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Highlight from "../components/Highlight";
 
 const Catalog = () => {
-  const { issm, isxs } = E.useDevice();
+  const { issm, isxs } = useDevice();
 
   return (
     <Suspense fallback={<div>...catalog</div>}>

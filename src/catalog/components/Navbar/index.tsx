@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import pages from "./mock";
 import { DeviceData } from "./type";
-import { U } from "../../../commons";
+import { fallbackHandler } from "../../../commons";
 import './styles.scss'
 
 type Props = { isExtraSmall?: boolean, isSmall?: boolean };
@@ -11,7 +11,7 @@ type Props = { isExtraSmall?: boolean, isSmall?: boolean };
 const icon = ["search"];
 const icons = ["bell", "search", "user"];
 
-const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
+export const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
   const [links, setLinks] = useState<DeviceData>({});
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
   return (
     <div className="navbar">
       <Link to="/home">
-        <Icon logo="netflix" />
+        <Icon icon="netflix" />
       </Link>
       <div className="navbar__links">
         {Object.keys(links).map((k: string) => (
@@ -30,11 +30,11 @@ const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
       </div>
       <div className="navbar__options">
         {(isExtraSmall ? icon : icons).map(
-          (el, idx) => <button key={idx} onClick={U.fallbackHandler}><Icon logo={el} /></button>
+          (el, idx) => <button key={idx} onClick={fallbackHandler}><Icon icon={el} /></button>
         )}
       </div>
     </div>
   );
 }
 
-export default Navbar;
+export { Navbar as default };
