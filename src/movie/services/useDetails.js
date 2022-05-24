@@ -1,7 +1,8 @@
-import mock from "../../mocks.json";
+import mock from "../../mocks";
 
 const useDetails = () => {
   return { get: async () => mock };
 };
 
-export default useDetails;
+export { MockData } from '../../mocks';
+export { useDetails as default};

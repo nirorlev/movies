@@ -1,7 +1,8 @@
-import mock from "../../mocks.json";
+import mock from "../../mocks";
 
-const useRecommended = () => {
+export const useRecommended = () => {
   return { get: async () => mock };
 };
 
-export default useRecommended;
+export { MockData } from '../../mocks';
+export { useRecommended as default};

@@ -1,4 +1,4 @@
-[
+export const data = [
   {
     "vote_count": 1883,
     "id": 19404,
@@ -384,4 +384,8 @@
     "overview": "While serving time for insanity at a state mental hospital, implacable rabble-rouser, Randle Patrick McMurphy inspires his fellow patients to rebel against the authoritarian rule of head nurse, Mildred Ratched.",
     "release_date": "1975-11-18"
   }
-]
+];
+
+export type MockData = typeof data[0];
+
+export { data as default };
