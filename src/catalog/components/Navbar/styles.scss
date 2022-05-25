@@ -1,6 +1,6 @@
 @use '../../../commons/global.scss' as g;
 
-$proportion: 70%;
+$proportion: 85%;
 
 .navbar {
   display: flex;
@@ -24,13 +24,29 @@ $proportion: 70%;
 
 .link {
   color: g.$white;
-  margin-left: g.$lg;
-  text-shadow: 0 0 g.$sm hsl(0deg 0% 35%)
+  font-size: 0.75rem;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: #{g.$xs-resolution}) {
+  $xs-proportion: 70%;
+
+  .navbar__links {
+    width: $xs-proportion;
+  }
+
+  .navbar__options {
+    width: 100% - $xs-proportion;
+  }
+
   .navbar__options > button {
     margin: g.$spacing-xs / 2;
+  }
+
+  .link {
+    margin-left: g.$lg;
+    text-align: center;
+    text-shadow: 0 0 g.$sm hsl(0deg 0% 35%);
   }
 }
 

@@ -2,15 +2,28 @@
 
 .highlight {
   display: grid;
+  height: 60vh;
+  justify-content: center;
+  grid-template-rows: 6fr 1fr 2fr;
+  align-items: end;
+
+  > * {
+    color: g.$lightest;
+  }
+}
+
+.highlight__text {
+  text-transform: capitalize;
 }
 
 .highlight__title {
-  color: g.$lightest;
+  font-size: g.$lg;
   font-family: 'Trebuchet MS', monospace;
+  font-weight: bolder;
+  text-transform: uppercase;
 }
 
 .highlight__description {
-  color: g.$lightest;
 }
 
 .highlight__buttons {
@@ -18,7 +31,17 @@
   flex-flow: row;
 }
 
-@media screen and (min-width: #{g.$xs-resolution}) {
+@media screen and (max-width: #{g.$xs-resolution}) {
+  .highlight > * {
+    text-align: center;
+  }
+
+  .highlight__buttons {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: #{g.$xs-resolution + 1}) {
   .highlight {
     height: 40vh;
     margin: auto 1.25rem;
@@ -27,8 +50,6 @@
   
   .highlight__title {
     font-size: g.$lg * 1.25;
-    text-transform: uppercase;
-    font-weight: bolder;
     width: 70%;
   }
 
