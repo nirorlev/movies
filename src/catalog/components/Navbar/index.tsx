@@ -15,7 +15,7 @@ export const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
   const [links, setLinks] = useState<DeviceData>({});
 
   useEffect(() => {
-    setLinks((isSmall ? pages.mobile : pages.desktop));
+    setLinks((isSmall || isExtraSmall) ? pages.mobile : pages.desktop);
   }, [isSmall]);
 
   return (

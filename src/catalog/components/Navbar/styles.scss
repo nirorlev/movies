@@ -10,7 +10,6 @@ $proportion: 70%;
 .navbar__links {
   display: flex;
   width: $proportion;
-  justify-content: space-around;
 }
 
 .navbar__options {
@@ -25,10 +24,17 @@ $proportion: 70%;
 
 .link {
   color: g.$white;
+  margin-left: g.$lg;
   text-shadow: 0 0 g.$sm hsl(0deg 0% 35%)
 }
 
-@media screen and (min-width: #{g.$sm-resolution - 1}) {
+@media screen and (min-width: #{g.$xs-resolution}) {
+  .navbar__options > button {
+    margin: g.$spacing-xs / 2;
+  }
+}
+
+@media screen and (min-width: #{g.$sm-resolution}) {
   .link {
     font-size: g.$spacing-xs;
     margin-left: g.$spacing-sm;
@@ -39,7 +45,7 @@ $proportion: 70%;
   }
 }
 
-@media screen and (min-width: #{g.$sm-resolution}) {
+@media screen and (min-width: #{g.$sm-resolution + 1}) {
   .link {
     font-size: g.$spacing-sm;
     margin-left: g.$spacing-md;
