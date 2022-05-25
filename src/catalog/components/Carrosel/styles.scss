@@ -1,0 +1,44 @@
+@use '../../../commons/global.scss' as g;
+
+$porportion: 120px;
+
+.carrossel {
+  display: flex;
+  flex-flow: column;
+  margin-top: g.$xl;
+}
+
+.carrossel__title {
+  color: g.$lightest;
+  margin-bottom: g.$xs;
+  margin: 0 0 g.$xs g.$nn;
+}
+
+.carrossel__videos {
+  display: flex;
+  flex-flow: row;
+  height: $porportion;
+}
+
+.carrossel__videos > img {
+  width: 180px;
+  margin-left: g.$nn;
+}
+
+.carrossel__button {
+  height: $porportion;
+  width: g.$lg * 1.5;
+  background-color: g.$darkest;
+  position: absolute;
+  right: 0;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  > img {
+    filter: invert(1);
+    margin-left: - g.$xs;
+  }
+}
