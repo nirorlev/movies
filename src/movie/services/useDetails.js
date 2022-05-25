@@ -1,4 +1,4 @@
-import mock from "../../mocks";
+import { data as mock } from "../../mocks";
 
 const useDetails = () => {
   return { get: async () => mock };

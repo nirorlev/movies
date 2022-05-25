@@ -1,8 +1,8 @@
-import mock from "../../mocks";
+import { data as mock } from "../../mocks";
 
 export const useRecommended = () => {
   return { get: async () => mock };
 };
 
 export { MockData } from '../../mocks';
-export { useRecommended as default};
+export { useRecommended as default };

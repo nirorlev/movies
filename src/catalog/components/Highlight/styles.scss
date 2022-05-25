@@ -1,18 +1,49 @@
 @use '../../../commons/global.scss' as g;
 
 .highlight {
-  height: 40vh;
-  display: flex;
-  margin: auto g.$md;
-  align-items: flex-end;
+  display: grid;
+}
+
+.highlight__title {
+  color: g.$lightest;
+  font-family: 'Trebuchet MS', monospace;
+}
+
+.highlight__description {
+  color: g.$lightest;
 }
 
 .highlight__buttons {
   display: flex;
   flex-flow: row;
+}
 
-  > * {
-    width: g.$lg * 5;
-    margin-left: g.$nn;
+@media screen and (min-width: #{g.$xs-resolution}) {
+  .highlight {
+    height: 40vh;
+    margin: auto 1.25rem;
+    grid-template-rows: 1fr 2fr 1fr;
+  }
+  
+  .highlight__title {
+    font-size: g.$lg * 1.25;
+    text-transform: uppercase;
+    font-weight: bolder;
+    width: 70%;
+  }
+
+  .highlight__description {
+    width: 70%;
+    padding: g.$sm 0;
+  }
+
+  .highlight__buttons {
+    height: g.$xl;
+    align-self: flex-end;
+  
+    > * {
+      width: g.$lg * 5;
+      margin-left: g.$nn;
+    }
   }
 }
