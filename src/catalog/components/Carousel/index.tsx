@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Poster from '../Poster';
 import './styles.scss'
 
 type Props = { title: string };
@@ -17,10 +18,10 @@ export const Carrossel: React.FC<Props> = ({ title }) => {
     <div className='carrossel'>
       <span className='carrossel__title'>{title}</span>
       <div className='carrossel__videos' style={{ marginLeft: OFFSET_I * (counter + 1) }}>
-        <img key="fst" alt="Video" src="https://random.imagecdn.app/182/120" />
-        {_.map((_, k) => <img key={k} alt="Video" src="https://random.imagecdn.app/180/120" />)}
-        <img key="mid" alt="Video" src="https://random.imagecdn.app/182/120" />
-        {_.map((_, k) => <img key={k} alt="Video" src="https://random.imagecdn.app/180/120" />)}
+        <Poster key={"fst"} />
+        {_.map((_, k) => <Poster key={k} />)}
+        <Poster key={"mid"} />
+        {_.map((_, k) => <Poster key={k} />)}
         <button className='carrossel__button' onClick={handler}>
           <img src="/assets/chevron.svg" />
         </button>
