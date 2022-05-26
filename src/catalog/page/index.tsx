@@ -4,8 +4,9 @@ import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Highlight from "../components/Highlight";
 import useRecommended, { MockData } from "../services/useRecommended";
-import Carrosel from "../components/Carrosel";
+import Carousel from "../components/Carousel";
 import Galery from "../components/Galery";
+import Modal from "../components/Modal";
 
 const random = (data: MockData[]): MockData => data[Math.floor(Math.random() * data.length)];
 
@@ -30,10 +31,11 @@ const Catalog = () => {
           more={<Icon icon="./assets/info.svg" />}
         />
         <Galery>
-          <Carrosel title="Top 10" />
-          <Carrosel title="Award Winners"/>
-          <Carrosel title="Binge Watch"/>
+          {/* <Carousel title="Top 10" />
+          <Carousel title="Award Winners"/>
+          <Carousel title="Binge Watch"/> */}
         </Galery>
+        <Modal hidden={false}/>
       </Background>
     </Suspense>
   );
