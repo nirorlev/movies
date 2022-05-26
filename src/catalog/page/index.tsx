@@ -31,11 +31,11 @@ const Catalog = () => {
           more={<Icon icon="./assets/info.svg" />}
         />
         <Galery>
-          {/* <Carousel title="Top 10" />
+          <Carousel title="Top 10" />
           <Carousel title="Award Winners"/>
-          <Carousel title="Binge Watch"/> */}
+          <Carousel title="Binge Watch"/>
         </Galery>
-        <Modal hidden={false}/>
+        <Modal hidden={false} offsetTop={747} />
       </Background>
     </Suspense>
   );

@@ -1,11 +1,11 @@
 @use '../../../commons/global.scss' as g;
 
-$proportion: 400px;
+$proportion: 40vw;
 
 .modal {
   display: flex;
   flex-flow: column;
-  background-color: g.$dark;
+  background-color: g.$darkest;
   position: absolute;
   top: 50vh;
   left: 50vw;
@@ -39,24 +39,44 @@ $proportion: 400px;
 
 .modal__icon > img {
   margin: 0 g.$nn;
-  border: 1px solid g.$lightest;
-  border-radius: 100%;
   padding: g.$nn;
+  border: 1px solid;
+  border-radius: 100%;
+
+  &:first-child {
+    background-color: g.$lightest;
+  }
+  
+  &:not(:first-child) {
+    filter: invert(1);
+  }
 }
 
 .modal .text {
-  color: g.$lightest;
+  display: flex;
+  color: g.$brand-color;
+  width: 80%;
+  text-align: center;
 }
 
-.modal__rates > span {
+.modal__rates > div {
+  flex-flow: row;
+}
+
+.modal__rates span {
   font-size: g.$xs;
   text-transform: uppercase;
-  margin-right: g.$md;
+  margin-right: g.$nn;
+
+  &:nth-child(2) {
+    color: g.$lightest;
+  }
 }
 
 .modal__title span {
   display: block;
-  width: $proportion - 40;
+  color: g.$lightest;
+  width: calc($proportion - 10%);
   font-size: g.$lg * 1.5;
   text-overflow: ellipsis;
   white-space: nowrap;
