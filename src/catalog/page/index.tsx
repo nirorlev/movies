@@ -6,11 +6,11 @@ import Highlight from "../components/Highlight";
 import useRecommended, { MockData } from "../services/useRecommended";
 import Carousel from "../components/Carousel";
 import Galery from "../components/Galery";
-import Modal from "../components/Modal";
+import Modal, { ModalProvider } from "../components/Modal";
 
 const random = (data: MockData[]): MockData => data[Math.floor(Math.random() * data.length)];
 
-const Catalog = () => {
+export const Catalog = () => {
   const { issm, isxs } = useDevice();
   const recommended = useRecommended();
   const [picked, setPicked] = useState<MockData>();
@@ -30,15 +30,17 @@ const Catalog = () => {
           play={<Icon icon="./assets/play.svg" />}
           more={<Icon icon="./assets/info.svg" />}
         />
-        <Galery>
-          <Carousel title="Top 10" />
-          <Carousel title="Award Winners"/>
-          <Carousel title="Binge Watch"/>
-        </Galery>
-        <Modal hidden={false} offsetTop={747} />
+        <ModalProvider>
+          <Galery>
+            <Carousel title="Top 10" />
+            <Carousel title="Award Winners" />
+            <Carousel title="Binge Watch" />
+          </Galery>
+          <Modal />
+        </ModalProvider>
       </Background>
     </Suspense>
   );
 };
 
-export default Catalog;
+export { Catalog as default };

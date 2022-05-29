@@ -1,15 +1,18 @@
 import React from 'react';
 import { Icon } from '../../../commons';
 import Poster from '../Poster';
+import { useModal } from './context';
 import './styles.scss';
 
-type Props = { hidden: boolean, offsetTop: number };
+const style = (state: any) => state.hidden ? { display: 'none' } : { display: 'block', top: state.offsetTop }
 
-const Modal: React.FC<Props> = ({ hidden, offsetTop }) => {
-  return (
+export const Modal: React.FC = () => {
+  const context = useModal();
+
+  return context.state && (
     <div
       className="modal"
-      style={hidden ? { display: 'none' } : { display: 'block', top: offsetTop }}
+      style={style(context.state)}
     >
       <Poster />
       <div className="modal__details">
@@ -37,4 +40,5 @@ const Modal: React.FC<Props> = ({ hidden, offsetTop }) => {
   );
 }
 
-export default Modal;
+export { ModalContextProvider as ModalProvider, useModal, ActionKind } from './context';
+export { Modal as default };
