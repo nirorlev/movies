@@ -1,8 +1,8 @@
 import { EventHandler } from "react";
 
-const fallbackHandler: EventHandler<any> = (event: Event) => {
+export const fallbackHandler: EventHandler<any> = (event: Event) => {
   event.preventDefault();
   alert(":( Sorry still a TODO\nIt was not part of the assigment");
 };
 
-export { fallbackHandler };
+export { fallbackHandler as default };

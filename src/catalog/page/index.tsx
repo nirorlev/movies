@@ -3,20 +3,20 @@ import { Icon, useDevice } from "../../commons";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Highlight from "../components/Highlight";
-import useRecommended, { MockData } from "../services/useRecommended";
+import useRecommended from "../services/useRecommended";
 import Carousel from "../components/Carousel";
 import Galery from "../components/Galery";
 import Modal, { ModalProvider } from "../components/Modal";
 
-const random = (data: MockData[]): MockData => data[Math.floor(Math.random() * data.length)];
+const random = (data: any[]): any => data[Math.floor(Math.random() * data.length)];
 
 export const Catalog = () => {
   const { issm, isxs } = useDevice();
   const recommended = useRecommended();
-  const [picked, setPicked] = useState<MockData>();
+  const [picked, setPicked] = useState<unknown>();
 
   useEffect(() => {
-    recommended.get()
+    recommended.get({ page: 1 })
       .then((data) => setPicked(random(data)))
       .catch(err => console.error(err))
   }, []);
@@ -26,15 +26,15 @@ export const Catalog = () => {
       <Background>
         <Navbar isSmall={issm} isExtraSmall={isxs} />
         <Highlight
-          info={picked}
+          details={picked}
           play={<Icon icon="./assets/play.svg" />}
           more={<Icon icon="./assets/info.svg" />}
         />
         <ModalProvider>
           <Galery>
-            <Carousel title="Top 10" />
-            <Carousel title="Award Winners" />
-            <Carousel title="Binge Watch" />
+            <Carousel promise={recommended.get({ page: 1 })} title="Top 10" />
+            <Carousel promise={recommended.get({ page: 2 })} title="Award Winners" />
+            <Carousel promise={recommended.get({ page: 3 })} title="Binge Watch" />
           </Galery>
           <Modal />
         </ModalProvider>

@@ -1,7 +1,7 @@
-import React, { useCallback, useRef } from 'react';
+import React, { memo, useCallback, useRef } from 'react';
 import { useModal, ActionKind } from '../Modal';
 
-const Poster = () => {
+const Poster = memo(() => {
   const { dispatch } = useModal();
   const ref = useRef<HTMLButtonElement>(null);
   const handler = useCallback(() => {
@@ -13,6 +13,6 @@ const Poster = () => {
       <img alt="poster" src="https://random.imagecdn.app/182/120" />
     </button>
   );
-}
+});
 
 export default Poster;

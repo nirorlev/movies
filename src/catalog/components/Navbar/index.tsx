@@ -16,7 +16,7 @@ export const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
 
   useEffect(() => {
     setLinks((isSmall || isExtraSmall) ? pages.mobile : pages.desktop);
-  }, [isSmall]);
+  }, [isSmall, isExtraSmall]);
 
   return (
     <div className="navbar">
