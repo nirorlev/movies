@@ -13,7 +13,7 @@ const random = (data: any[]): any => data[Math.floor(Math.random() * data.length
 export const Catalog = () => {
   const { issm, isxs } = useDevice();
   const recommended = useRecommended();
-  const [picked, setPicked] = useState<unknown>();
+  const [picked, setPicked] = useState<any>();
 
   useEffect(() => {
     recommended.get({ page: 1 })
@@ -23,7 +23,7 @@ export const Catalog = () => {
 
   return (
     <Suspense fallback={<div>...catalog</div>}>
-      <Background>
+      {picked && <Background image={picked.backdrop_path}>
         <Navbar isSmall={issm} isExtraSmall={isxs} />
         <Highlight
           details={picked}
@@ -38,7 +38,7 @@ export const Catalog = () => {
           </Galery>
           <Modal />
         </ModalProvider>
-      </Background>
+      </Background>}
     </Suspense>
   );
 };
