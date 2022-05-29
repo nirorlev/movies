@@ -1,18 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useDevice } from '../../../commons';
 import Poster from '../Poster';
 import './styles.scss'
 
 type Props = { title: string, promise: Promise<any> };
-
-const [width, padding] = [180, 8];
-const offset = - width - padding;
+type Proportions = { small: boolean, width: number, lpadding: number };
 
 const mod = (size: number) => (value: number) => (value + 1) % (size + 1);
+
+const offset = (counter: number, proportions: Proportions) =>
+  ({ marginLeft: -(proportions.width + proportions.lpadding) * (counter + 1) })
 
 export const Carrossel: React.FC<Props> = ({ title, promise }) => {
   const [counter, setCounter] = useState(-1);
   const [movies, setMovies] = useState<any[]>([]);
   const handlerRef = useRef<React.MouseEventHandler<HTMLButtonElement>>();
+  const [proportions, setProportions] = useState<Proportions>();
+  const { isxs } = useDevice();
 
   useEffect(() => {
     promise
@@ -23,27 +27,36 @@ export const Carrossel: React.FC<Props> = ({ title, promise }) => {
       .catch(() => console.log('Fail to render catalog'))
   }, [promise])
 
+  useEffect(() => {
+    if (isxs) {
+      setProportions({ width: 90, lpadding: 16, small: true });
+    }
+    else {
+      setProportions({ width: 180, lpadding: 8, small: false });
+    }
+  }, [isxs])
+
   const renderMovieListInEndlessSlide = () => {
     const [fst, ...rest] = movies;
 
     return <>
-      <Poster key={"fst"} width={width} lpadding={padding} {...fst} />
-      {rest.map(mv => <Poster key={mv.id} width={width} lpadding={padding} {...mv} />)}
+      <Poster key={"fst"} {...proportions} {...fst} />
+      {rest.map(mv => <Poster key={mv.id} {...proportions} {...mv} />)}
 
-      <Poster key={"mid"} width={width} lpadding={padding} {...fst} />
-      {rest.map(mv => <Poster key={mv.id} width={width} lpadding={padding} {...mv} />)}
+      <Poster key={"mid"} {...proportions} {...fst} />
+      {rest.map(mv => <Poster key={mv.id} {...proportions} {...mv} />)}
     </>
   };
 
   return (
     <div className='carrossel'>
       <span className='carrossel__title'>{title}</span>
-      <div className='carrossel__videos' style={{ marginLeft: offset * (counter + 1) }}>
+      {proportions && <div className='carrossel__videos' style={offset(counter, proportions)}>
         {renderMovieListInEndlessSlide()}
         {handlerRef.current && <button className='carrossel__button' onClick={handlerRef.current}>
           <img alt="Next" src="/assets/chevron.svg" />
         </button>}
-      </div>
+      </div>}
     </div>
   );
 }
