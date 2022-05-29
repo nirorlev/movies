@@ -1,0 +1,14 @@
+@use '../../../commons/global.scss' as g;
+
+.details__text {
+  display: block;
+  color: g.$lightest;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  font-size: g.$xs;
+  background-color: g.$darkest;
+  padding: g.$xs;
+}

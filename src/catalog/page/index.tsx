@@ -32,8 +32,8 @@ export const Catalog = () => {
         />
         <ModalProvider>
           <Galery>
-            <Carousel promise={recommended.get({ page: 1 })} title="Top 10" />
-            <Carousel promise={recommended.get({ page: 2 })} title="Award Winners" />
+            <Carousel promise={recommended.get({ page: 1 })} title="Top Movies" />
+            <Carousel promise={recommended.get({ page: 2 })} title="Upcoming" />
             <Carousel promise={recommended.get({ page: 3 })} title="Binge Watch" />
           </Galery>
           <Modal />

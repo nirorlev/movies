@@ -1,16 +1,32 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { memo, useCallback, useRef, useState } from 'react';
 import { useModal, ActionKind } from '../Modal';
+import './styles.scss';
 
-const Poster = memo(() => {
+type Props = { width: number, lpadding: number, rest: object };
+
+const Poster = memo<Props>(({ width, lpadding, ...rest }) => {
+  const details: any = rest;
   const { dispatch } = useModal();
   const ref = useRef<HTMLButtonElement>(null);
-  const handler = useCallback(() => {
-    ref.current && dispatch({ type: ActionKind.Position, payload: ref.current.offsetTop})
-  }, [dispatch, ref])
+  const [title, setTitle] = useState('');
+
+  const clickHandler = useCallback(() => {
+    ref.current && dispatch({ type: ActionKind.Position, payload: ref.current.offsetTop })
+    dispatch({ type: ActionKind.Reveal, payload: details })
+  }, [dispatch, ref]);
+
+  const hoverHandler = useCallback((text: string) => () => {
+    ref.current && setTitle(text);
+  }, [ref])
 
   return (
-    <button ref={ref} onClick={handler}>
-      <img alt="poster" src="https://random.imagecdn.app/182/120" />
+    <button ref={ref} onClick={clickHandler}
+      onMouseOver={hoverHandler(details.title)}
+      onMouseOut={hoverHandler('')}
+      style={{ padding: 0, paddingLeft: lpadding }}
+    >
+      <img alt="poster" width={width} src={`${process.env.REACT_APP_IMAGES_RESOURCE}${details.backdrop_path}`} />
+      {title && <span className='details__text' style={{ width }}>{title}</span>}
     </button>
   );
 });
