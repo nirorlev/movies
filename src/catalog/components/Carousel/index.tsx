@@ -37,14 +37,9 @@ export const Carrossel: React.FC<Props> = ({ title, promise }) => {
   }, [isxs])
 
   const renderMovieListInEndlessSlide = () => {
-    const [fst, ...rest] = movies;
-
     return <>
-      <Poster key={"fst"} {...proportions} {...fst} />
-      {rest.map(mv => <Poster key={mv.id} {...proportions} {...mv} />)}
-
-      <Poster key={"mid"} {...proportions} {...fst} />
-      {rest.map(mv => <Poster key={mv.id} {...proportions} {...mv} />)}
+      {movies.map(mv => <Poster key={mv.id} {...proportions} {...mv} />)}
+      {movies.map(mv => <Poster key={mv.id} {...proportions} {...mv} />)}
     </>
   };
 

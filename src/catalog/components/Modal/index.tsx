@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import { Icon } from '../../../commons';
+import { Icon, useDevice } from '../../../commons';
 import { useModal } from './context';
 import './styles.scss';
 
-const style = (state: any) => state.hidden ? { display: 'none' } : { display: 'block', top: state.offsetTop }
+const style = (state: any) => state.hidden ? { display: 'none' } : { display: 'block', top: state.offsetTop - 150 }
+const getbackdrop = (data: any) => `${process.env.REACT_APP_IMAGES_RESOURCE}${data.backdrop_path}`;
+const getposter = (data: any) => `${process.env.REACT_APP_IMAGES_RESOURCE}${data.poster_path}`;
 
 export const Modal: React.FC = () => {
   const context = useModal();
   const [loaded, setLoaded] = useState(false);
+  const { issm, isxs } = useDevice();
 
-  return (context.state && loaded)? (
+  return context.state && (
     <div
       className="modal"
       style={style(context.state)}
@@ -18,10 +21,11 @@ export const Modal: React.FC = () => {
         <>
           <img
             alt="poster"
-            src={`${process.env.REACT_APP_IMAGES_RESOURCE}${context.state.data.backdrop_path}`}
+            className='modal__image'
+            src={(issm || isxs)? getposter(context.state.data): getbackdrop(context.state.data)}
             onLoad={() => setLoaded(true)}
           />
-          <div className="modal__details">
+          {loaded && <div className="modal__details">
             <div className='modal__icon'>
               <Icon icon="/assets/play.svg" />
               <Icon icon="/assets/like.svg" />
@@ -41,11 +45,11 @@ export const Modal: React.FC = () => {
             <div className='modal__title'>
               <span>{context.state.data.title}</span>
             </div>
-          </div>
+          </div>}
         </>
       )}
     </div>
-  ): null;
+  );
 }
 
 export { ModalContextProvider as ModalProvider, useModal, ActionKind } from './context';

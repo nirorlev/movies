@@ -1,6 +1,6 @@
 @use '../../../commons/global.scss' as g;
 
-$proportion: 40vw;
+$proportion: 60vw;
 
 .modal {
   display: flex;
@@ -18,16 +18,21 @@ $proportion: 40vw;
   }
 }
 
+.modal__image {
+  object-fit: cover;
+  object-position: top;
+  height: 50vh;
+}
+
 .modal__details,
 .modal__rates,
 .modal__title {
-  margin-top: g.$nn;
-  margin-left: g.$nn;
+  margin: 0 0 g.$nn g.$nn;
 }
 
 .modal__details {
   display: grid;
-  grid-template-rows: 1fr 1fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr;
   align-items: center;
 }
 
@@ -55,31 +60,68 @@ $proportion: 40vw;
 .modal .text {
   display: flex;
   color: g.$brand-color;
-  width: 70%;
-  text-align: center;
+  width: 40%;
 }
 
-.modal__rates > div {
-  flex-flow: row;
-}
+.modal__rates {
+  flex-wrap: wrap;
+  text-align: left;
 
-.modal__rates span {
-  font-size: g.$xs;
-  text-transform: uppercase;
-  margin-right: g.$nn;
+  > div {
+    flex-flow: row;
+  }
 
-  &:nth-child(2) {
-    color: g.$lightest;
+  span {
+    font-size: g.$nn;
+    text-transform: uppercase;
+    margin-right: g.$nn;
+  
+    &:nth-child(2) {
+      color: g.$lightest;
+    }
   }
 }
 
 .modal__title span {
   display: block;
   color: g.$lightest;
-  width: calc($proportion - 10%);
-  font-size: g.$lg * 1.5;
+  width: calc($proportion - 5%);
+  font-size: g.$md;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+
+@media screen and (min-width: #{g.$xs-resolution}) {
+  .modal__rates {
+    flex-wrap: nowrap;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: #{g.$sm-resolution}) {
+  .modal__image {
+    height: auto;
+  }
+
+  .modal__details {
+    display: grid;
+    grid-template-rows: 1fr 1fr 2fr;
+    align-items: center;
+  }
+
+  .modal__details,
+  .modal__rates,
+  .modal__title {
+    margin: g.$nn 0 0 g.$nn;
+  }
+
+  .modal__rates span {
+    font-size: g.$xs;
+  }
+
+  .modal__title span {
+    font-size: g.$lg;
+  }
 }
 

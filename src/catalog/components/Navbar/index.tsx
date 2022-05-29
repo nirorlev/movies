@@ -3,20 +3,19 @@ import { Link } from "react-router-dom";
 import Icon from "../Icon";
 import pages from "./mock";
 import { DeviceData } from "./type";
-import { fallbackHandler } from "../../../commons";
+import { fallbackHandler, useDevice } from "../../../commons";
 import './styles.scss'
-
-type Props = { isExtraSmall?: boolean, isSmall?: boolean };
 
 const icon = ["search"];
 const icons = ["bell", "search", "user"];
 
-export const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
+export const Navbar: React.FC = () => {
+  const { issm, isxs } = useDevice();
   const [links, setLinks] = useState<DeviceData>({});
 
   useEffect(() => {
-    setLinks((isSmall || isExtraSmall) ? pages.mobile : pages.desktop);
-  }, [isSmall, isExtraSmall]);
+    setLinks((issm || isxs) ? pages.mobile : pages.desktop);
+  }, [issm, isxs]);
 
   return (
     <div className="navbar">
@@ -29,7 +28,7 @@ export const Navbar: React.FC<Props> = ({ isSmall, isExtraSmall }: Props) => {
         ))}
       </div>
       <div className="navbar__options">
-        {(isExtraSmall ? icon : icons).map(
+        {(isxs ? icon : icons).map(
           (el, idx) => <button key={idx} onClick={fallbackHandler}><Icon icon={el} /></button>
         )}
       </div>

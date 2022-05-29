@@ -1,5 +1,5 @@
 import React, { Suspense, useEffect, useState } from "react";
-import { Icon, useDevice } from "../../commons";
+import { Icon } from "../../commons";
 import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Highlight from "../components/Highlight";
@@ -11,7 +11,6 @@ import Modal, { ModalProvider } from "../components/Modal";
 const random = (data: any[]): any => data[Math.floor(Math.random() * data.length)];
 
 export const Catalog = () => {
-  const { issm, isxs } = useDevice();
   const recommended = useRecommended();
   const [picked, setPicked] = useState<any>();
 
@@ -24,7 +23,7 @@ export const Catalog = () => {
   return (
     <Suspense fallback={<div>...catalog</div>}>
       {picked && <Background image={picked.backdrop_path}>
-        <Navbar isSmall={issm} isExtraSmall={isxs} />
+        <Navbar />
         <Highlight
           details={picked}
           play={<Icon icon="./assets/play.svg" />}
