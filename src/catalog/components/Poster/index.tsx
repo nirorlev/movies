@@ -2,9 +2,9 @@ import React, { memo, useCallback, useRef, useState } from 'react';
 import { useModal, ActionKind } from '../Modal';
 import './styles.scss';
 
-type Props = { width: number, lpadding: number, small: boolean, rest: object };
+type Props = { width?: number, lpadding?: number, readable?: boolean };
 
-const Poster = memo<Props>(({ width, lpadding, small, ...rest }) => {
+const Poster = memo<Props>(({ width, lpadding, readable, ...rest }) => {
   const details: any = rest;
   const { dispatch } = useModal();
   const ref = useRef<HTMLButtonElement>(null);
@@ -26,7 +26,7 @@ const Poster = memo<Props>(({ width, lpadding, small, ...rest }) => {
       style={{ padding: 0, paddingLeft: lpadding }}
     >
       <img alt="poster" className='details__img' width={width} src={`${process.env.REACT_APP_IMAGES_RESOURCE}${details.backdrop_path}`} />
-      {title && !small && <span className='details__text' style={{ width }}>{title}</span>}
+      {title && readable && <span className='details__text' style={{ width }}>{title}</span>}
     </button>
   );
 });

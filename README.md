@@ -24,3 +24,6 @@ Not found & Fallback
 Styling
 - Styles in CSS are divided by scope: global (DOM elements and common classes), pages and components
 - It seems counterintuitive to scater styles, going back in forth, but its sustainable to scale
+
+Test
+- Testing wasn't so much needded because most work was done with CSS only

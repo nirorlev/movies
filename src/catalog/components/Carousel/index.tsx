@@ -4,7 +4,7 @@ import Poster from '../Poster';
 import './styles.scss'
 
 type Props = { title: string, promise: Promise<any> };
-type Proportions = { small: boolean, width: number, lpadding: number };
+type Proportions = { readable: boolean, width: number, lpadding: number };
 
 const mod = (size: number) => (value: number) => (value + 1) % (size + 1);
 
@@ -29,10 +29,10 @@ export const Carrossel: React.FC<Props> = ({ title, promise }) => {
 
   useEffect(() => {
     if (isxs) {
-      setProportions({ width: 90, lpadding: 16, small: true });
+      setProportions({ width: 90, lpadding: 16, readable: false });
     }
     else {
-      setProportions({ width: 180, lpadding: 8, small: false });
+      setProportions({ width: 180, lpadding: 8, readable: true });
     }
   }, [isxs])
 

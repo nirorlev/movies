@@ -7,7 +7,7 @@ export enum ActionKind {
 };
 
 type Action = { type: ActionKind, payload: number | object };
-type State = { hidden: boolean, offsetTop?: number, data?: object };
+type State = { hidden: boolean, offsetTop?: number, data?: any };
 type Context = { state: State, dispatch: React.Dispatch<Action> };
 
 const ModalContext = createContext<Context>({ state: { hidden: true }, dispatch: () => undefined });
