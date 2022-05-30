@@ -4,7 +4,6 @@ import Background from "../components/Background";
 import Navbar from "../components/Navbar";
 import Highlight, { SortProvider } from "../components/Highlight";
 import useRecommended from "../services/useRecommended";
-import Carousel from "../components/Carousel";
 import Galery from "../components/Galery";
 import Modal, { ModalProvider } from "../components/Modal";
 
@@ -31,11 +30,10 @@ export const Catalog = () => {
             more={<Icon icon="./assets/info.svg" />}
           />
           <ModalProvider>
-            <Galery>
-              <Carousel promise={recommended.get({ page: 1 })} title="Top Movies" />
-              <Carousel promise={recommended.get({ page: 2 })} title="Upcoming" />
-              <Carousel promise={recommended.get({ page: 3 })} title="Binge Watch" />
-            </Galery>
+            <Galery
+              api={recommended}
+              data={["Top Movies", "Upcoming", "Binge Watch"]}
+            />
             <Modal />
           </ModalProvider>
         </SortProvider>

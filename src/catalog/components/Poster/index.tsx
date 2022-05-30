@@ -6,6 +6,10 @@ type Props = { width?: number, lpadding?: number, readable?: boolean };
 
 const Poster = memo<Props>(({ width, lpadding, readable, ...rest }) => {
   const details: any = rest;
+  const src = details.backdrop_path
+    && `${process.env.REACT_APP_IMAGES_RESOURCE}${details.backdrop_path}`
+    || "https://random.imagecdn.app/180/100";
+    
   const { dispatch } = useModal();
   const ref = useRef<HTMLButtonElement>(null);
   const [title, setTitle] = useState('');
@@ -25,7 +29,7 @@ const Poster = memo<Props>(({ width, lpadding, readable, ...rest }) => {
       onMouseOut={hoverHandler('')}
       style={{ padding: 0, paddingLeft: lpadding }}
     >
-      <img alt="poster" className='details__img' width={width} src={`${process.env.REACT_APP_IMAGES_RESOURCE}${details.backdrop_path}`} />
+      <img alt="poster" className='details__img' width={width} src={src} />
       {title && readable && <span className='details__text' style={{ width }}>{title}</span>}
     </button>
   );

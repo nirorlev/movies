@@ -3,3 +3,10 @@
 .galery {
   margin: g.$lg 0 8% 0;
 }
+
+.galery__guard {
+  visibility: hidden;
+  height: 8%;
+  position: absolute;
+  bottom: 0;
+}
