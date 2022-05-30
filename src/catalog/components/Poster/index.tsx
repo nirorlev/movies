@@ -22,7 +22,7 @@ const Poster = memo<Props>(({ width, lpadding, readable, ...rest }) => {
     ref.current && setTitle(text);
   }, [ref])
 
-  return (
+  return details.backdrop_path && (
     <button ref={ref} onClick={clickHandler}
       onMouseOver={hoverHandler(details.title)}
       onMouseOut={hoverHandler('')}
