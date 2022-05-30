@@ -1,5 +1,5 @@
 import React, { memo, useCallback, useRef, useState } from 'react';
-import { useModal, ActionKind } from '../Modal';
+import { useModal, ModalAction } from '../Modal';
 import './styles.scss';
 
 type Props = { width?: number, lpadding?: number, readable?: boolean };
@@ -11,9 +11,9 @@ const Poster = memo<Props>(({ width, lpadding, readable, ...rest }) => {
   const [title, setTitle] = useState('');
 
   const clickHandler = useCallback(() => {
-    ref.current && dispatch({ type: ActionKind.Position, payload: ref.current.offsetTop })
-    dispatch({ type: ActionKind.Reveal, payload: details })
-  }, [dispatch, ref]);
+    ref.current && dispatch({ type: ModalAction.Position, payload: ref.current.offsetTop })
+    dispatch({ type: ModalAction.Reveal, payload: details })
+  }, [dispatch, ref, details]);
 
   const hoverHandler = useCallback((text: string) => () => {
     ref.current && setTitle(text);

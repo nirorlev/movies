@@ -28,9 +28,30 @@
   overflow-y: hidden;
 }
 
+.highlight__actions {
+  display: flex;
+}
+
 .highlight__buttons {
   display: flex;
   flex-flow: row;
+}
+
+.highlight__dropdown {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+  
+  select {
+    font-family: g.$font-family;
+    padding: g.$nn g.$lg;
+    margin-left: g.$nn;
+    border: none;
+    border-radius: g.$nn;
+    color: g.$lightest;
+    background-color: g.$darkest;
+    opacity: 0.6;
+  }
 }
 
 @media screen and (max-width: #{g.$xs-resolution}) {

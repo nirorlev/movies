@@ -52,5 +52,5 @@ export const Modal: React.FC = () => {
   );
 }
 
-export { ModalContextProvider as ModalProvider, useModal, ActionKind } from './context';
+export { ModalContextProvider as ModalProvider, useModal, ModalAction } from './context';
 export { Modal as default };

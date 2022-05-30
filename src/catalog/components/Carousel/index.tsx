@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDevice } from '../../../commons';
+import { useSort } from '../Highlight';
 import Poster from '../Poster';
 import './styles.scss'
 
@@ -17,15 +18,16 @@ export const Carrossel: React.FC<Props> = ({ title, promise }) => {
   const handlerRef = useRef<React.MouseEventHandler<HTMLButtonElement>>();
   const [proportions, setProportions] = useState<Proportions>();
   const { isxs } = useDevice();
+  const sort = useSort();
 
   useEffect(() => {
     promise
       .then(data => {
         handlerRef.current = () => setCounter(mod(data.length))
-        setMovies(data);
+        setMovies(sort.state.method(data));
       })
       .catch(() => console.log('Fail to render catalog'))
-  }, [promise])
+  }, [promise, sort.state])
 
   useEffect(() => {
     if (isxs) {

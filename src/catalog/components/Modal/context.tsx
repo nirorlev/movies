@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useReducer } from "react";
 
-export enum ActionKind {
+export enum ModalAction {
   Reveal = "REVEAL",
   Hide = "HIDE",
   Position = "POSITION"
 };
 
-type Action = { type: ActionKind, payload: number | object };
+type Action = { type: ModalAction, payload: number | object };
 type State = { hidden: boolean, offsetTop?: number, data?: any };
 type Context = { state: State, dispatch: React.Dispatch<Action> };
 
@@ -16,11 +16,11 @@ export const ModalContextProvider = ({ children }: { children: React.ReactElemen
   const [state, dispatch] = useReducer(
     (prev: any, action: Action) => {
       switch (action.type) {
-        case ActionKind.Reveal:
+        case ModalAction.Reveal:
           return { ...prev, hidden: false, data: action.payload };
-        case ActionKind.Hide:
+        case ModalAction.Hide:
           return { ...prev, hidden: true };
-        case ActionKind.Position:
+        case ModalAction.Position:
           return { ...prev, offsetTop: action.payload };
         default:
           throw new Error("Dispatch modal action failed");
