@@ -6,10 +6,9 @@ type Props = { width?: number, lpadding?: number, readable?: boolean };
 
 const Poster = memo<Props>(({ width, lpadding, readable, ...rest }) => {
   const details: any = rest;
-  const src = details.backdrop_path
-    && `${process.env.REACT_APP_IMAGES_RESOURCE}${details.backdrop_path}`
-    || "https://random.imagecdn.app/180/100";
-    
+  const src: string = details.backdrop_path
+    ?`${process.env.REACT_APP_IMAGES_RESOURCE}${details.backdrop_path}`
+    :'/assets/placeholder.png';
   const { dispatch } = useModal();
   const ref = useRef<HTMLButtonElement>(null);
   const [title, setTitle] = useState('');

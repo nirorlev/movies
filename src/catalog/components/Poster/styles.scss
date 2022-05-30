@@ -13,6 +13,11 @@
   padding: g.$xs;
 }
 
+.details__img {
+  max-height: 100%;
+  background-color: g.$lightest;
+}
+
 @media screen and (max-width: #{g.$xs-resolution}) {
   .details__img {
     border-radius: 100%;
